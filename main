@@ -1,0 +1,12 @@
+console.log("hello");
+
+var TelegramBot = require('node-telegram-bot-api');
+var token = '133394201:AAE93LJDmZSinI1CHUf_XwN1ooC8RjSyZQY';
+
+var bot = new TelegramBot(token, {polling: true});
+
+bot.on('message', function (msg) {
+	var chatId = msg.chat.id;
+	var chatName = msg.chat.first_name;
+	bot.sendMessage(chatId, "Hi dear " + chatName + "! :-)");
+});
